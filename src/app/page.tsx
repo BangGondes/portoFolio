@@ -1,101 +1,97 @@
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Project from "./components/project/page"; // Pastikan path ini benar
 
-export default function Home() {
+const socialLinks = {
+  github: "https://github.com/BangGondes",
+  instagram: "https://www.instagram.com/saliem_069",
+  linkedin: "https://www.linkedin.com/in/kang-noer-841139337",
+};
+
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="bg-white text-gray-900 font-sans">
+      {/* Header */}
+      <header className="w-full py-24 px-8 bg-gradient-to-r from-teal-400 to-teal-600 flex justify-center items-center">
+        <img
+          src="/images/profile.jpg" // Pastikan file ada di folder /public
+          alt="Profile"
+          className="rounded-full w-32 h-32 mr-8"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <div className="text-left">
+          <h1 className="text-6xl text-white font-extrabold mb-4">
+            Ahmad Fikri
+          </h1>
+          <p className="text-2xl text-gray-100 font-semibold mb-2">
+            Frontend Developer Intern
+          </p>
+          <p className="text-l text-gray-200">
+            I build accessible, pixel-perfect digital experiences for the web.
+          </p>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* About Me Section */}
+      <section className="py-24 px-8 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-semibold text-gray-800 mb-6">
+            About Me
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Hi, I&apos;m Ahmad Fikri! A passionate frontend developer who enjoys
+            creating dynamic and responsive web experiences. Currently
+            interning, learning, and growing in the world of frontend
+            development. Let's build something amazing together!
+          </p>
+          <Link
+            href="#projects"
+            className="inline-block bg-teal-500 text-white py-3 px-6 rounded-full text-lg font-medium transform transition duration-300 hover:bg-teal-600 hover:scale-105"
+          >
+            View Projects
+          </Link>
+        </div>
+      </section>
+
+      {/* Project Section */}
+      <Project />
+
+      {/* Footer */}
+      <footer className="bg-teal-500 text-white py-20 text-center">
+        <p className="font-medium text-lg mb-4">
+          Designed and Developed by Ahmad Fikri
+        </p>
+        <p className="text-sm text-gray-200 max-w-md mx-auto mb-6">
+          Loosely designed in Figma and coded in Visual Studio Code by yours
+          truly. Built with Next.js and Tailwind CSS, deployed with Vercel. All
+          text is set in the Inter typeface.
+        </p>
+        <div className="flex justify-center space-x-6 text-2xl">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <FaGithub className="hover:text-gray-200 transition-colors" />
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={socialLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read our docs
+            <FaInstagram className="hover:text-gray-200 transition-colors" />
+          </a>
+          <a
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="hover:text-gray-200 transition-colors" />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
   );
-}
+};
+
+export default HomePage;
