@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Project from "./components/project/page"; // Pastikan path ini benar
 import Footer from "./components/footer/page";  
+import TechStack from "./components/techstack/page";
 
 
 
@@ -51,7 +52,7 @@ const HomePage = () => {
 
       {/* Project Section */}
       <Project />
-
+      <TechStack />
     <Footer />
     </div>
   );
