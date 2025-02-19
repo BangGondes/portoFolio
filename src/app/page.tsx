@@ -12,7 +12,7 @@ const HomePage = () => {
       {/* Header */}
       <header className="w-full py-24 px-8 bg-gradient-to-r from-teal-400 to-teal-600 flex justify-center items-center">
         <img
-          src="/images/profile.jpg" // Pastikan file ada di folder /public
+          src="/images/profile.png" // Pastikan file ada di folder /public
           alt="Profile"
           className="rounded-full w-32 h-32 mr-8"
         />
@@ -53,7 +53,7 @@ const HomePage = () => {
       {/* Project Section */}
       <Project />
       <TechStack />
-    <Footer />
+      <Footer />
     </div>
   );
 };
